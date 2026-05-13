@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Button Example</title>
+
+</head>
+
+<body>
+
+    <!-- Heading -->
+
+    <h1 id="demo">
+
+        This is some text.
+
+    </h1>
+
+
+    <!-- Button -->
+
+    <button id="button">
+
+        Change Text
+
+    </button>
+
+
+
+    <script>
+
+        // Select button
+
+        const button =
+        document.querySelector("#button");
+
+
+        // Add click event
+
+        button.addEventListener("click",
+        function(event) {
+
+            // Change heading text
+
+            const element =
+            document.getElementById("demo");
+
+            element.textContent =
+            "Text changed by JavaScript!";
+
+
+            // Get mouse coordinates
+
+            const x = event.clientX;
+            const y = event.clientY;
+
+
+            // Show alert
+
+            alert(`Button clicked at X: ${x}, Y: ${y}`);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

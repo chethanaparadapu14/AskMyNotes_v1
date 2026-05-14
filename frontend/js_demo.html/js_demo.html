@@ -1,74 +1,74 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-    <title>JavaScript Button Example</title>
-
+    <title>Event Handler and Event Listener Example</title>
 </head>
 
 <body>
 
-    <!-- Heading -->
+    <h1 id="demo">This is some text.</h1>
 
-    <h1 id="demo">
-
-        This is some text.
-
-    </h1>
-
-
-    <!-- Button -->
-
-    <button id="button">
-
+    <button onclick="changeText()">
         Change Text
-
     </button>
 
+    <input type="button" value="Say Hello" id="button"/>
+    <button id="btn" style="display:inline-block;">
+        Click Me
+    </button>
 
+    <input type="text" onkeydown="customizeInput()" placeholder="Type here">
 
     <script>
 
-        // Select button
+    
+        function changeText() {
 
-        const button =
-        document.querySelector("#button");
+            let element = document.getElementById("demo");
 
+            element.textContent = "Text changed by JavaScript! 2nd time";
+        }
 
-        // Add click event
+        const button = document.querySelector('#button');
 
-        button.addEventListener("click",
-        function(event) {
-
-            // Change heading text
-
-            const element =
-            document.getElementById("demo");
-
-            element.textContent =
-            "Text changed by JavaScript!";
-
-
-            // Get mouse coordinates
+        button.addEventListener("click", function(event) {
 
             const x = event.clientX;
             const y = event.clientY;
 
-
-            // Show alert
-
+          
             alert(`Button clicked at X: ${x}, Y: ${y}`);
 
         });
 
+       
+        const button1 = document.getElementById("btn");
+
+        button1.addEventListener("click", function () {
+
+            console.log("First");
+
+        });
+
+        button1.addEventListener("click", function () {
+
+            console.log("Second");
+
+        });
+
+    
+        function customizeInput() {
+
+            var ele = document.getElementsByTagName("INPUT")[1];
+
+            ele.style.backgroundColor = "yellow";
+            ele.style.color = "red";
+
+        }
+
     </script>
 
 </body>
-
 </html>
